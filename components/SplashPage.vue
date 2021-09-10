@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex content-center justify-center text-center">
-    <div :class="{ 'animate-pulse': pulse }" class="mb-auto mt-auto p-4">
+    <div :class="{ 'animate-pulse': pulse }" class="mb-auto mt-auto">
       <h3 class="heading-title">{{ title }}</h3>
 
       <ArtCircle

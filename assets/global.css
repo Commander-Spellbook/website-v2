@@ -51,6 +51,10 @@ a {
   @apply m-4 inline-block py-2 px-3 bg-transparent text-link border-2 border-primary rounded-sm no-underline;
 }
 
+.button.dark {
+  @apply bg-dark text-white border-dark;
+}
+
 .button svg {
   @apply inline-block mr-1 fill-current;
 }
@@ -69,6 +73,10 @@ a {
 
 .button:hover {
   @apply bg-link text-white border-link;
+}
+
+.input {
+  @apply border px-3 py-2 w-full appearance-none rounded-none;
 }
 
 @media (min-width: 640px) {

@@ -10,23 +10,26 @@
       <SearchBar :on-home-page="true" class="bg-white mt-4 md:w-2/3 h-20" />
 
       <div class="button-links md:flex-row md:w-2/3 m-auto flex flex-col">
-        <nuxt-link to="/advanced-search/" class="button md:m-1">
+        <nuxt-link to="/advanced-search/" class="dark button md:m-1">
           Advanced Search
         </nuxt-link>
-        <nuxt-link to="/syntax-guide/" class="button md:m-1">
+        <nuxt-link to="/syntax-guide/" class="dark button md:m-1">
           Syntax Guide
         </nuxt-link>
-        <RandomButton :query="query" class="random-button button md:m-1">
+        <RandomButton :query="query" class="random-button dark button md:m-1">
           Random Combo
         </RandomButton>
-        <nuxt-link to="/featured/" class="previwed-combos-button button md:m-1">
+        <nuxt-link
+          to="/featured/"
+          class="previwed-combos-button dark button md:m-1"
+        >
           Midnight Hunt Combos
         </nuxt-link>
       </div>
 
       <div class="button-links flex md:w-2/3 m-auto">
         <ExternalLink
-          class="button"
+          class="dark button"
           to="https://www.patreon.com/commanderspellbook"
           >Join our Patreon</ExternalLink
         >
@@ -89,7 +92,7 @@ export default Vue.extend({
 }
 
 .button {
-  @apply bg-dark text-white mx-0 mt-2 mb-0 flex-grow border-dark;
+  @apply mx-0 mt-2 mb-0 flex-grow;
 }
 
 .button:hover {

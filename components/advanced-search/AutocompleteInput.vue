@@ -309,8 +309,4 @@ export default Vue.extend({
 .autocomplete-result.is-active {
   @apply bg-link text-white;
 }
-
-.input {
-  @apply border px-3 py-2 w-full appearance-none rounded-none;
-}
 </style>

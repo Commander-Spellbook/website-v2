@@ -26,7 +26,11 @@ describe("SearchBar", () => {
       path: "",
       query: {},
     };
-    $store = createStore();
+    $store = createStore({
+      getters: {
+        "auth/isAuthenticated": false,
+      },
+    });
     $router = {
       push: jest.fn(),
     };
@@ -129,6 +133,62 @@ describe("SearchBar", () => {
     await flushPromises();
 
     expect(randomButton.props("query")).toEqual("search");
+  });
+
+  it("displays profile link when logged in", async () => {
+    const NuxtLinkStub = {
+      props: ["to"],
+      template: "<div></div>",
+    };
+    // @ts-ignore
+    wrapperOptions.stubs.NuxtLink = NuxtLinkStub;
+    const wrapper = mount(SearchBar, wrapperOptions);
+
+    expect(
+      wrapper
+        .findComponent({
+          ref: "profile-link",
+        })
+        .isVisible()
+    ).toBe(false);
+
+    $store.getters["auth/isAuthenticated"] = true;
+
+    await flushPromises();
+
+    expect(
+      wrapper
+        .findComponent({
+          ref: "profile-link",
+        })
+        .isVisible()
+    ).toBe(true);
+
+    // also check the mobile menu
+    $store.getters["auth/isAuthenticated"] = false;
+
+    await flushPromises();
+
+    await wrapper.find("#search-bar-menu-button").trigger("click");
+    expect(
+      wrapper
+        .findComponent({
+          ref: "mobile-profile-link",
+        })
+        .isVisible()
+    ).toBe(false);
+
+    $store.getters["auth/isAuthenticated"] = true;
+
+    await flushPromises();
+
+    expect(
+      wrapper
+        .findComponent({
+          ref: "mobile-profile-link",
+        })
+        .isVisible()
+    ).toBe(true);
   });
 
   it("toggles link menu when menu button is clicked", async () => {

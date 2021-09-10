@@ -62,6 +62,14 @@
           <div class="random-icon link-icon" aria-hidden="true"></div>
           Random
         </RandomButton>
+        <nuxt-link
+          v-show="isAuthenticated"
+          ref="profile-link"
+          to="/profile/"
+          class="hidden md:flex menu-link"
+          ><div class="profile-icon link-icon mr-0"></div>
+          <span class="sr-only">Profile</span></nuxt-link
+        >
       </div>
     </form>
     <div
@@ -89,6 +97,15 @@
         <div class="random-icon link-icon" aria-hidden="true"></div>
         Random
       </RandomButton>
+
+      <nuxt-link
+        v-show="isAuthenticated"
+        ref="mobile-profile-link"
+        to="/profile/"
+        class="mobile-menu-button"
+        ><div class="profile-icon link-icon"></div>
+        Profile</nuxt-link
+      >
     </div>
   </div>
 </template>
@@ -131,6 +148,9 @@ export default Vue.extend({
         return "text-2xl text-center";
       }
       return "pl-8 -ml-6";
+    },
+    isAuthenticated(): boolean {
+      return this.$store.getters["auth/isAuthenticated"];
     },
   },
   watch: {
@@ -221,6 +241,11 @@ a {
 .syntax-guide-icon {
   -webkit-mask: url("~assets/svgs/question-solid.svg") no-repeat center;
   mask: url("~assets/svgs/question-solid.svg") no-repeat center;
+}
+
+.profile-icon {
+  -webkit-mask: url("~assets/svgs/user-circle-solid.svg") no-repeat center;
+  mask: url("~assets/svgs/user-circle-solid.svg") no-repeat center;
 }
 
 .random-icon {

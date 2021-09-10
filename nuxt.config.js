@@ -1,9 +1,12 @@
+import dotenv from "dotenv";
 const isWindows = process.platform === "win32";
 
 const title = "Commander Spellbook: The Search Engine for EDH Combos";
 const description =
   "The Premier Magic: the Gathering Combo Search Engine for the Commander / Elder Dragon Highlander (EDH) Format.";
 const linkPreviewImage = "https://commanderspellbook.com/link-preview.png";
+
+dotenv.config();
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
@@ -116,6 +119,7 @@ export default {
 
   router: {
     trailingSlash: true,
+    middleware: ["authenticated"],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -130,6 +134,10 @@ export default {
       mode: "client",
     },
     "~/plugins/vue-tooltip.ts",
+    {
+      src: "./plugins/fireauth.ts",
+      mode: "client",
+    },
   ],
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
@@ -143,13 +151,41 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ["@nuxtjs/google-fonts", "vue-social-sharing/nuxt"],
+  modules: [
+    "@nuxtjs/google-fonts",
+    "vue-social-sharing/nuxt",
+    "@nuxtjs/firebase",
+  ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+
+  firebase: {
+    config: {
+      apiKey:
+        process.env.FIREBASE_API_KEY ||
+        "AIzaSyDbLy6q09rqCgwMEssOGj2OxYyD8bSegXw",
+      authDomain:
+        process.env.FIREBASE_AUTH_DOMAIN ||
+        "commander-spellbook-local.firebaseapp.com",
+      projectId: process.env.FIREBASE_PROJECT_ID || "commander-spellbook-local",
+      storageBucket:
+        process.env.FIREBASE_STORAGE_BUCKET ||
+        "commander-spellbook-local.appspot.com",
+      messagingSenderId:
+        process.env.FIREBASE_MESSAGING_SENDER_ID || "766592582304",
+      appId:
+        process.env.FIREBASE_APP_ID ||
+        "1:766592582304:web:d55f27537ea02d05457fc5",
+      // measurementId: '<measurementId>'
+    },
+    services: {
+      auth: true,
+    },
+  },
 
   tailwindcss: {
     jit: !isWindows,
