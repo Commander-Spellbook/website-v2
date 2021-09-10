@@ -41,18 +41,27 @@
     <h4 id="card-names">Card Names</h4>
     <ul>
       <li>
-        All card names should be written out in full. No abbreviations,
-        nicknames, etc
+        All card names are written out in full. No abbreviations, nicknames,
+        etc.
 
         <ul>
           <li>
-            The exception to this rule is legendary card names, where you can
-            truncate everything after the comma. If the legendary card name does
-            not have a comma in it, if the card's most recent printing has the
-            legendary name abbreviated, you can abbreviate it. If it fits
-            neither of those criteria, if it has its whole name spelled out on
-            it, tough luck, spell it out anyway. Otherwise, feel free to ask the
-            mods on discord.
+            The exception to this rule is legendary card names. If there is a
+            version of the card that shortens the name and there are no more
+            recent printings of said card that does not shorten the name (not
+            including oddities like weirdly worded Secret Lairs or stuff like
+            the List that does not update wording), you may abbreviate the card
+            name.
+          </li>
+          <li>
+            This is not the case when there are two cards that would be
+            abbreviated the same way. For example, if a combo has two cards that
+            would be abbreviated "Jace", then the full name of each card is
+            spelled out.
+          </li>
+          <li>
+            This is not the case in the "Card Names" section of a combo, where
+            card names are always written out in full.
           </li>
         </ul>
       </li>
@@ -61,38 +70,43 @@
     <h4 id="mana-symbol-order">Mana Symbol Order in Prerequisites and Steps</h4>
     <ul>
       <li>
-        When writing costs, always write generic mana symbols first (The
-        exception is the x symbol, which comes before generic symbols).
-      </li>
-      <li>
-        Colorless and mono-colored mana symbols always are listed at the end on
-        a cost, with colorless coming before the colors.
+        Costs are always written with the generic mana symbol first.
 
         <ul>
           <li>
-            For 2 allied colors, the one that comes first in WUBRG order is
-            written first, with G being considered to come before W. (If you do
-            not feel like figuring it out yourself, check how EDHREC has the
-            symbols listed under "Color ID")
+            <TextWithMagicSymbol text="{x}" /> comes before the generic mana
+            symbol, and is the only symbol for which this is the case as of when
+            this is being written.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        Colorless and mono-colored mana symbols are always listed at the end of
+        a cost, with the colorless symbol always coming before the colored mana
+        symbols. For all of the following cases, you may reference how EDHRec
+        sequences its colors in the "Commanders" dropdown rather than using
+        these explanations to figure it out yourself.
+
+        <ul>
+          <li>
+            For two allied colors, the one that comes first in WUBRG order is
+            written first, with G being considered to come before W.
           </li>
           <li>
-            For 2 enemy colors, the one that would only have to advance 2
-            positions forward in WUBRG order (rather than 3) comes first (If you
-            do not feel like figuring it out yourself, check how EDHREC has the
-            symbols listed under "Color ID").
+            For two enemy colors, the one that would only have to advance 2
+            positions forward in WUBRG order (rather than 3) comes first.
           </li>
           <li>
-            For 3 colors, the primary color of the wedge/shard (the enemy of
+            For three colors, the primary color of the wedge/shard (the enemy of
             both in the wedge, the ally of both in the shard) goes in the
             middle, and the two colors on the left and right are placed based on
             where they are positioned in the color pie relative to the primary
-            color. (If you do not feel like figuring it out yourself, check how
-            EDHREC has the symbols listed under "Color ID")
+            color.
           </li>
           <li>
-            For 4 colors, they are listed in WUBRG order starting with the one
-            after the missing color. (If you do not feel like figuring it out
-            yourself, check how EDHREC has the symbols listed under "Color ID")
+            For four colors, they are listed in WUBRG order starting with the
+            one after the missing color.
           </li>
         </ul>
       </li>
@@ -101,10 +115,7 @@
         are, but should be placed before normal colored mana symbols. The
         notation for it is:
         <ul>
-          <li>
-            <TextWithMagicSymbol text="{wp}" />
-            <code>{wp}</code>
-          </li>
+          <li><TextWithMagicSymbol text="{wp}" /> <code>{wp}</code></li>
           <li><TextWithMagicSymbol text="{up}" /> <code>{up}</code></li>
           <li><TextWithMagicSymbol text="{bp}" /> <code>{bp}</code></li>
           <li><TextWithMagicSymbol text="{rp}" /> <code>{rp}</code></li>
@@ -116,7 +127,15 @@
       </li>
       <li>
         All other unmentioned mana symbols should go between the generic and
-        colored mana symbols
+        colored mana symbols.
+
+        <ul>
+          <li>
+            There are some mana symbol combinations with no precedent, like
+            Phyrexian mana with any kind of of symbol outside of X or generic,
+            snow with
+          </li>
+        </ul>
       </li>
     </ul>
 
@@ -126,12 +145,12 @@
     <ul>
       <li>
         Attach is the verb, and should be used when an equipment, aura, or
-        fortification is being attached to something
+        fortification is being attached to something.
 
         <ul>
           <li>
-            An example for an equipment would be "Activate the ~1 equip ability,
-            attaching it to ~2"
+            An example for an equipment would be "Activate [the named equipment]
+            by paying [mana cost], attaching it to [target creature]".
           </li>
           <li>
             The verbs equip, enchant, and fortify should not be used to describe
@@ -144,7 +163,7 @@
         equipment, aura, or fortification attached to them, respectively.
 
         <ul>
-          <li>Attached should never be used in these cases</li>
+          <li>Attached should never be used in these cases.</li>
         </ul>
       </li>
     </ul>
@@ -176,7 +195,7 @@
       <li>
         Numbers that could be written with a singular English word (like one, or
         twenty) should be spelled out, while multi-word numbers (like 24) should
-        be written as numerals
+        be written as numerals.
 
         <ul>
           <li>
@@ -195,6 +214,13 @@
       <li>Cannot [sic] is a contraction. Don't [sic] use it.</li>
     </ul>
 
+    <h4 id="card-names">Spelling</h4>
+    <ul>
+      <li>
+        The Commander Spellbook uses American English. Wizards of the Coast uses
+        American English, and so do we.
+      </li>
+    </ul>
     <hr />
 
     <h3 class="heading-subtitle">Card Names</h3>
@@ -208,30 +234,31 @@
         <ul>
           <li>
             Note that this is different from how they are handled in other
-            sections of the combo, where abbreviations or shortenings are
-            permitted in some cases.
+            sections of the combo, where abbreviations are permitted in some
+            cases.
           </li>
         </ul>
       </li>
       <li>
-        Adventure cards should only be listed as the front half of the hard
+        Adventure cards should only be listed as the non-adventure part of the
+        card.
       </li>
-      <li>Split cards should be written as "Side 1 // Side 2"</li>
+      <li>Split cards should be written as "[side 1] // [side 2]".</li>
       <li>
         Flip Cards (the ones you rotate from Kamigawa) should only be listed as
-        the unflipped "side" of the card
+        the unflipped "side" of the card.
       </li>
       <li>
-        Modal DFCs and Transforming DFCs should only be listed as the front face
-        of the card.
+        Modal double-faced cards and transforming double-faced cards should be
+        listed as "[front face] // [back face]".
       </li>
     </ul>
 
     <h4 id="name-ordering">Card Name Ordering</h4>
     <ul>
       <li>
-        The least replaceable piece of a combo should be the farthest to the
-        left, becoming more replaceable as you move to the right
+        The least replaceable piece of a combo should be farthest to the left,
+        with less replaceable pieces further to the right.
       </li>
     </ul>
 
@@ -265,9 +292,9 @@
     <h4 id="pre-ordering">Prerequisite Ordering</h4>
     <ul>
       <li>What zones the cards you require begin in always comes first.</li>
-      <li>The mana required for the combo always comes last</li>
+      <li>The mana required for the combo always comes last.</li>
       <li>
-        Miscellaneous results go in between; a more defined hierarchy may
+        Miscellaneous results go in between; a more strict hierarchy may
         eventually be defined.
       </li>
     </ul>
@@ -276,18 +303,29 @@
     <ul>
       <li>
         When you have a creature on the battlefield that must either attack or
-        use an activated ability, one should say "~ does not have summoning
-        sickness."
+        use an activated ability involving tapping as a cost, one should say
+        "[creature name] does not have summoning sickness."
+        <ul>
+          <li>
+            The exception to this rule is when a permanent goes from being a
+            creature to being a noncreature. As a noncreature, it may have its
+            activated abilities that have tapping as a cost activated despite
+            having summoning sickness. Therefore, there is no need to reference
+            summoning sickness in such a case.
+          </li>
+        </ul>
       </li>
       <li>
         Noncreature permanents do not suffer from summoning sickness and
-        therefore do not need to mention summoning sickness
+        therefore do not need to mention summoning sickness.
 
         <ul>
           <li>
-            The exception being when it transitions between the two, in which
-            case, if it becomes a creature, it will need to not have summoning
-            sickness
+            The exception to this rule is when a permanent goes from being a
+            noncreature to being a creature. As a creature, it may only attack
+            or have its activated abilities involving tapping as a cost
+            activated if it does not have summoning sickness. Therefore,
+            summoning sickness should be referenced in such a case.
           </li>
         </ul>
       </li>
@@ -298,8 +336,8 @@
     </h4>
     <ul>
       <li>
-        When only using the front side of a card, the back side of the card can
-        be ignored entirely
+        Only the faces referenced in the combo need to be referenced in the
+        prerequisites.
       </li>
     </ul>
 
@@ -307,50 +345,51 @@
 
     <h3 class="heading-subtitle">Steps</h3>
 
-    <h4 id="dividing-steps">Dividing up Steps</h4>
-    <ul>
-      <li>
-        Each individual action taken by the player should be its own step.
-      </li>
-      <li>
-        Each individual trigger occurring and resolving should also be its own
-        step.
-
-        <ul>
-          <li>
-            When there are multiple triggers triggering at the same time, there
-            should be a step listing all of the triggers that occurred, followed
-            by each trigger being resolved in its own step.
-          </li>
-        </ul>
-      </li>
-    </ul>
-
     <h4 id="cost-and-effects">Costs and Effects</h4>
     <ul>
       <li>
         Steps involving casting spells or activating abilities can be broken
-        into two parts: cost and effect, and the parts should generally be
-        separated by a comma.
+        into two parts: cost and effect. The parts are generally separated by a
+        comma.
+      </li>
+      <li>
+        In some cases, a triggered ability may occur in between paying the cost
+        of and the resolution of a spell or activated ability, or priority may
+        be held and additional spells may be cast or activated abilities may be
+        activated. See
+        <a href="#delayed-resolution">Delayed Resolution</a> for how to handle
+        such cases.
+      </li>
+    </ul>
+
+    <h4 id="dividing-steps">Dividing up Steps</h4>
+    <ul>
+      <li>Each individual action taken by the player is its own step.</li>
+      <li>
+        If there is only one trigger occuring, one spell being cast, or one
+        ability being activated, the activation and resolution should be part of
+        the step.
 
         <ul>
           <li>
-            Activating an ability where the only cost is tapping that permanent
-            works a bit differently. In that case, you merge the cost and
-            effect, saying; "Tap ~1 for {~2}:" or "Tap ~ to …"
+            In some cases, something else will be put onto the stack before the
+            one spell, ability, or trigger is able to resolve. See
+            <a href="#delayed-resolution">Delayed Resolution</a> for how to
+            handle such cases.
           </li>
         </ul>
       </li>
       <li>
-        Some cases may cause things to take place between an effect going onto
-        the stack and the resolution of said effects. See the
-        <a href="#delayed-resolution">Delayed Resolution section</a> for more
-        info.
-      </li>
-      <li>
-        Mana payments generally do not need to be written out as part of costs
-        (See the <a href="#adding-spending-mana">Spending Mana section</a> for
-        more info)
+        When there are multiple abilities triggering at the same time, there
+        should be a step listing all of the triggers that occurred, followed by
+        each trigger being resolved in its own step.
+
+        <ul>
+          <li>
+            The resolving triggers should be listed in the same order as the
+            named triggered abilities were listed.
+          </li>
+        </ul>
       </li>
     </ul>
 
@@ -369,24 +408,26 @@
 
         <ul>
           <li>
-            When referring to the item being put onto the stack
+            When referring to the item being put onto the stack:
 
             <ul>
-              <li>For a trigger, say "~ triggers."</li>
+              <li>For a triggered ability, say "[card name] triggers."</li>
               <li>
-                For casting a spell, say "Cast ~." Make sure to include any
-                costs that need mentioning.
+                For casting a spell, say "Cast [card name]." Make sure to
+                include any costs that need mentioning.
               </li>
               <li>
-                For activating an ability, say "Activate ~." Make sure to
-                include any costs that need mentioning.
+                For activating an ability, say "Activate [card name]." Make sure
+                to include any costs that need mentioning. If there are multiple
+                activateable abilities on the card that could be activated, make
+                it clear which one is being activated.
               </li>
             </ul>
           </li>
         </ul>
         <ul>
           <li>
-            When referring to the step immediately afterwards
+            When referring to the step immediately afterwards:
 
             <ul>
               <li>
@@ -403,13 +444,13 @@
         </ul>
         <ul>
           <li>
-            When resolving the original effect
+            When resolving the original effect:
 
             <ul>
               <li>
                 For a trigger, say "Resolve the ~ trigger, " then continue with
                 the effect of said trigger (If the card name starts with the
-                word "the", instead say "Resolve ~'s trigger")
+                word "the", instead say "Resolve ~'s trigger").
               </li>
             </ul>
           </li>
@@ -421,12 +462,12 @@
       </li>
       <li>
         For resolving an activated ability, say "Resolve the ~ ability, " then
-        continue with the effect of said trigger
+        continue with the effect of said trigger.
 
         <ul>
           <li>
             If the card name starts with the word "the", instead say "Resolve
-            ~'s ability"
+            ~'s ability".
           </li>
         </ul>
       </li>
@@ -439,20 +480,12 @@
         when mana is added.
       </li>
       <li>
-        Combos that involve the creation of infinite mana via a loop of some
-        kind should state what kinds of mana is being spent and in what
+        Combos must state what kinds of mana are being spent and in what
         quantities said types of mana are being spent.
-        <ul>
-          <li>
-            The amount of unspent mana should only be referenced when directly
-            pertinent to the cards involved, such as with Doubling Cube.
-          </li>
-        </ul>
       </li>
       <li>
-        Combos that spend a finite amount of mana a singular time do not need to
-        say how much mana is being spent, just that the spell is being cast or
-        that the ability is being activated.
+        The amount of unspent mana should only be referenced when directly
+        pertinent to the cards involved, such as with Doubling Cube.
       </li>
       <li>
         Mana that is left unspent should be referred to as unspent mana. For
@@ -460,7 +493,7 @@
         "leaving {b}{b} unspent."
 
         <ul>
-          <li>The mana pool no longer exists and should not be referenced</li>
+          <li>The mana pool does not exist and should not be referenced.</li>
           <li>
             "Floating" mana is a slang term that refers to the same thing, and
             should not be used.
@@ -477,12 +510,12 @@
       </li>
       <li>
         When all but the first number of steps make up an infinite loop, the
-        last step of the combo should read "repeat from step ~"
+        last step of the combo should read "repeat from step ~".
       </li>
       <li>
         When a certain group of steps need to be repeated that do not fit into
         either category, the step following the last step in the loop should
-        read "repeat steps ~1 through ~2.
+        read "repeat steps ~1 through ~2".
       </li>
     </ul>
 
@@ -517,7 +550,7 @@
     <ul>
       <li>
         Extra turns are considered infinite despite the fact that you eventually
-        deck yourself due to card draw
+        deck yourself due to card draw.
       </li>
       <li>
         Effects that occur once or twice per extra turn are not considered
