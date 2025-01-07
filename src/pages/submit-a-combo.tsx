@@ -297,7 +297,7 @@ const SubmitACombo: React.FC = () => {
             value={manaCost}
             onChange={(e) => setManaCost(e.target.value)}
           />
-          <div className="bg-gray-200 h-14 flex-1 flex items-center p-3 whitespace-nowrap min-w-max">
+          <div className="bg-gray-200 h-14 flex-1 flex items-center p-3 whitespace-nowrap min-w-max dark:bg-gray-800">
             Preview: <TextWithMagicSymbol text={manaCost} />
           </div>
         </div>

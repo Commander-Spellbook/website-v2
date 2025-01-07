@@ -62,7 +62,7 @@ const Home: React.FC<Props> = ({ featuredComboButtonText }) => {
             <div className="w-full">
               <SpellbookLogo />
 
-              <h2 className="font-title my-1 sm:my-3 text-2xl sm:text-3xl md:text-4xl">
+              <h2 className="font-title my-1 sm:my-3 text-2xl sm:text-3xl md:text-4xl text-dark">
                 The Search Engine for EDH Combos
               </h2>
 

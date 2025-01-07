@@ -20,7 +20,7 @@ const StyledSelect: React.FC<Props> = ({
   value,
   options,
   selectBackgroundClassName = 'border border-dark',
-  selectTextClassName = 'text-dark',
+  selectTextClassName = styles.selectOption,
   onChange,
   disabled,
 }) => {
@@ -48,7 +48,7 @@ const StyledSelect: React.FC<Props> = ({
         className={`${styles.operatorSelector} ${selectTextClassName} focus:shadow-outline`}
       >
         {options.map((option, index) => (
-          <option key={`${label}-input-${index}-${option.label}`} value={option.value} className="text-dark">
+          <option key={`${label}-input-${index}-${option.label}`} value={option.value} className={styles.selectOption}>
             {option.label}
           </option>
         ))}

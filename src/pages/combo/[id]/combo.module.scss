@@ -22,7 +22,7 @@
   }
 
   thead {
-    @apply text-dark border-b-4;
+    @apply text-dark border-b-4 dark:text-light;
   }
 
   tbody {

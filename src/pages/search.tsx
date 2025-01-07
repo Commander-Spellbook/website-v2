@@ -157,7 +157,6 @@ const Search: React.FC<Props> = ({ combos, count, page, bannedCombos, error, fea
                 id="sort-combos-select"
                 onChange={handleSortChange}
                 selectBackgroundClassName="border-dark border-2 my-2 sm:mr-2"
-                selectTextClassName="text-dark"
                 label="Change how combos are sorted"
                 options={SORT_OPTIONS}
               />
@@ -169,7 +168,6 @@ const Search: React.FC<Props> = ({ combos, count, page, bannedCombos, error, fea
                 value={order}
                 onChange={handleOrderChange}
                 selectBackgroundClassName="border-dark border-2 sm:m-2"
-                selectTextClassName="text-dark"
                 label="Change sort direction, ascending or descending"
                 options={ORDER_OPTIONS}
               />
@@ -181,7 +179,6 @@ const Search: React.FC<Props> = ({ combos, count, page, bannedCombos, error, fea
                 value={groupBy ? 'true' : 'false'}
                 onChange={handleGroupByComboChange}
                 selectBackgroundClassName="border-dark border-2 my-2 sm:mr-2"
-                selectTextClassName="text-dark"
                 label="Group variants by combo"
                 options={[
                   { value: 'true', label: 'Yes' },

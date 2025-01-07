@@ -2,16 +2,8 @@ import { Canvas, CanvasRenderingContext2D, createCanvas, loadImage } from 'canva
 import { VariantsApi } from '@spacecowmedia/spellbook-client';
 import { apiConfiguration } from 'services/api.service';
 import { NextApiRequest, NextApiResponse } from 'next';
+import scryfall from 'scryfall-client';
 import serverPath from 'lib/serverPath';
-
-const manaSymbols: { [key: string]: string } = {
-  W: 'https://svgs.scryfall.io/card-symbols/W.svg',
-  U: 'https://svgs.scryfall.io/card-symbols/U.svg',
-  B: 'https://svgs.scryfall.io/card-symbols/B.svg',
-  R: 'https://svgs.scryfall.io/card-symbols/R.svg',
-  G: 'https://svgs.scryfall.io/card-symbols/G.svg',
-  C: 'https://svgs.scryfall.io/card-symbols/C.svg',
-};
 
 const width = 1080;
 const manaOffset = width / 25;
@@ -34,7 +26,7 @@ async function headerCanvas(identityArray: any[]) {
   let startManaPos = width / 2 - ((identityArray.length - 1) * (iWidth + manaOffset) + iWidth) / 2;
   for (let [index, letter] of identityArray.entries()) {
     let position = index * (iWidth + manaOffset) + startManaPos;
-    let img = await loadImage(manaSymbols[letter]);
+    let img = await loadImage(scryfall.getSymbolUrl(letter));
     ctx.drawImage(img, position, manaOffset / 2, iWidth, iWidth);
   }
   return canvas1;

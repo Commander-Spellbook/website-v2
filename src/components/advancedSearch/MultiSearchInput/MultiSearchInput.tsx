@@ -118,7 +118,7 @@ const MultiSearchInput: React.FC<Props> = ({
                 value: option.operator + '|' + (option.numeric ?? '') + '|' + (option.negate ?? ''),
                 label: option.label,
               }))}
-              selectTextClassName="sm:w-1/2 flex-grow"
+              selectTextClassName="sm:w-1/2 flex-grow bg-transparent"
               selectBackgroundClassName={`${
                 input.error ? 'border-danger' : 'border-dark'
               } border border-b-0 sm:border-b sm:border-r-0 sm:w-1/2 flex-grow`}
@@ -129,7 +129,7 @@ const MultiSearchInput: React.FC<Props> = ({
                   value={input.value}
                   onChange={(value) => handleInputChange(index, value)}
                   label={inputLabel}
-                  inputClassName="border-dark"
+                  inputClassName={styles.autocompleteInput}
                   autocompleteOptions={autocompleteOptions}
                   cardAutocomplete={cardAutocomplete}
                   resultAutocomplete={resultAutocomplete}

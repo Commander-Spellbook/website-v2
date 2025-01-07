@@ -2,11 +2,23 @@
   @apply flex flex-wrap justify-center;
 
   a {
-    @apply no-underline text-dark;
+    @apply no-underline text-dark dark:text-light;
   }
 
   .comboResult {
     @apply max-w-lg mx-0 my-2 rounded border-2 border-dark flex-grow flex flex-col content-center;
+  }
+
+  .comboResultSection {
+    @apply border-b-2 border-light dark:border-dark;
+  }
+
+  .prerequisites span {
+    @apply text-gray-500 dark:text-gray-400;
+  }
+
+  .variantBanner {
+    @apply w-full bg-pink-300 text-right dark:bg-link;
   }
 
   @media (min-width: 768px) {

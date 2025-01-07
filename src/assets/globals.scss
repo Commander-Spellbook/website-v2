@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  @apply bg-white font-body;
+  @apply bg-white font-body dark:bg-black dark:text-white;
 }
 
 body,
@@ -18,7 +18,7 @@ html,
 }
 
 a {
-  @apply underline text-link;
+  @apply underline text-link dark:text-primary;
 }
 
 #main:focus {
@@ -57,7 +57,7 @@ a {
 }
 
 .heading-title {
-  @apply font-title text-center text-4xl text-dark uppercase;
+  @apply font-title text-center text-4xl text-dark uppercase dark:text-light;
 }
 
 .heading-subtitle {
@@ -65,7 +65,11 @@ a {
 }
 
 .button {
-  @apply m-4 inline-block py-2 px-3 bg-transparent text-link border-2 border-primary rounded-sm no-underline;
+  @apply m-4 inline-block py-2 px-3 bg-transparent text-link border-2 border-primary rounded-sm no-underline dark:text-primary;
+}
+
+input, textarea, select, option, .input, .inputControl {
+  @apply border-dark bg-white dark:bg-dark dark:text-light;
 }
 
 .button.tight {

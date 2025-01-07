@@ -13,7 +13,13 @@ const MAX_NUMBER_OF_MATCHING_RESULTS = 20;
 const AUTOCOMPLETE_DELAY = 150;
 const BLUR_CLOSE_DELAY = 900;
 
-export type AutoCompleteOption = { value: string; label: string; alias?: RegExp; normalizedValue?: string };
+export type AutoCompleteOption = {
+  value: string;
+  label: string;
+  alias?: RegExp;
+  normalizedValue?: string;
+  normalizedLabel?: string;
+};
 
 type Props = {
   value: string;
@@ -25,7 +31,6 @@ type Props = {
   inputId: string;
   placeholder?: string;
   label?: string;
-  matchAgainstOptionLabel?: boolean;
   hasError?: boolean;
   useValueForInput?: boolean;
   onChange?: (_value: string) => void;
@@ -41,7 +46,6 @@ const AutocompleteInput: React.FC<Props> = ({
   templateAutocomplete,
   inputId,
   label,
-  matchAgainstOptionLabel,
   useValueForInput,
   placeholder,
   hasError,
@@ -65,10 +69,6 @@ const AutocompleteInput: React.FC<Props> = ({
     resultAutocomplete ||
     templateAutocomplete;
   const inMemory = !active || (!cardAutocomplete && !resultAutocomplete && !templateAutocomplete);
-
-  autocompleteOptions?.forEach(
-    (option) => (option.normalizedValue = option.normalizedValue ?? normalizeStringInput(option.value)),
-  );
 
   const total = matchingAutoCompleteOptions.length;
   const option = matchingAutoCompleteOptions[arrowCounter];
@@ -226,6 +226,12 @@ const AutocompleteInput: React.FC<Props> = ({
         setLoading(false);
       }
     }
+    options
+      .filter((o) => o.normalizedValue === undefined)
+      .forEach((o) => (o.normalizedValue = o.normalizedValue ?? normalizeStringInput(o.value)));
+    options
+      .filter((o) => o.normalizedLabel === undefined)
+      .forEach((o) => (o.normalizedLabel = o.normalizedLabel ?? normalizeStringInput(o.label)));
     return options.filter((option) => {
       const mainMatch = option.normalizedValue?.includes(normalizedValue);
 
@@ -233,18 +239,15 @@ const AutocompleteInput: React.FC<Props> = ({
         return true;
       }
 
-      if (matchAgainstOptionLabel) {
-        const labelMatch = normalizeStringInput(option.label).includes(normalizedValue);
+      const labelMatch = option.normalizedLabel?.includes(normalizedValue);
 
-        if (labelMatch) {
-          return true;
-        }
+      if (labelMatch) {
+        return true;
       }
 
       if (option.alias) {
         return normalizedValue.match(option.alias);
       }
-
       return false;
     });
   };
@@ -291,7 +294,8 @@ const AutocompleteInput: React.FC<Props> = ({
     }
     setMatchingAutoCompleteOptions([]);
     const totalOptions = await findAllMatches(value);
-    setMatchingAutoCompleteOptions(findBestMatches(totalOptions, value));
+    const matchingOptions = findBestMatches(totalOptions, value);
+    setMatchingAutoCompleteOptions(matchingOptions);
   };
 
   const handleKeydown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -358,7 +362,7 @@ const AutocompleteInput: React.FC<Props> = ({
           {matchingAutoCompleteOptions.map((item, index) => (
             <li
               key={index}
-              className={`${styles.autocompleteResult} ${index === arrowCounter && styles.isActive}`}
+              className={`${inputClassName} ${styles.autocompleteResult} ${index === arrowCounter && styles.isActive}`}
               onClick={() => handleClick(item)}
               onMouseOver={() => handleAutocompleteItemHover(index)}
             >

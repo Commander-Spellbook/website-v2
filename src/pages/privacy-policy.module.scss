@@ -24,7 +24,7 @@
   }
 
   table tr:nth-child(even) {
-    @apply bg-gray-100;
+    @apply bg-gray-100 dark:bg-gray-800;
   }
 
   table td {

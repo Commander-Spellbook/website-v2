@@ -1,6 +1,6 @@
 .syntaxGuideContainer {
   code {
-    @apply bg-gray-200 text-dark px-1;
+    @apply bg-gray-200 text-dark px-1 dark:bg-gray-700 dark:text-light;
   }
 
   ul {
@@ -20,7 +20,7 @@
 
 .searchGuideContainer {
   code {
-    @apply bg-gray-200 pl-1 pr-1;
+    @apply pl-1 pr-1;
   }
   .description p {
     @apply mb-4;

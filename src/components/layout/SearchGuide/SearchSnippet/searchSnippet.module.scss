@@ -1,5 +1,5 @@
 .link {
-  @apply text-dark no-underline;
+  @apply text-dark no-underline dark:text-light;
   .searchSnippet {
     @apply border-2 border-dark pb-2 mb-4 rounded-sm;
   }

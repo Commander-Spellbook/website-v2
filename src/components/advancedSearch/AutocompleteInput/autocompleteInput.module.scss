@@ -3,7 +3,7 @@
 }
 
 .autocompleteResults {
-  @apply p-0 m-0 bg-white border border-light overflow-auto max-h-48 absolute w-full z-10;
+  @apply p-0 m-0 bg-white border border-light overflow-auto max-h-48 absolute w-full z-10 dark:bg-dark;
 }
 
 .autocompleteResult {

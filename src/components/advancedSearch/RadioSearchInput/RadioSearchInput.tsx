@@ -42,7 +42,7 @@ const RadioSearchInput: React.FC<Props> = ({ checkedValue, options, formName, la
               value={option.value}
               onChange={() => handleChange(option.value)}
             />
-            <span className="ml-2 text-dark">{option.label}</span>
+            <span className="ml-2">{option.label}</span>
           </label>
         ))}
       </fieldset>

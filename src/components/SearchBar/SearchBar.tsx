@@ -3,9 +3,10 @@ import Link from 'next/link';
 import styles from './searchBar.module.scss';
 import { NextRouter, useRouter } from 'next/router';
 import UserDropdown from '../layout/UserDropdown/UserDropdown';
-import { useCookies } from 'react-cookie';
 import { apiConfiguration } from 'services/api.service';
 import { VariantsApi } from '@spacecowmedia/spellbook-client';
+import DarkMode from 'components/ui/DarkMode/DarkMode';
+import { useCookies } from 'react-cookie';
 
 type Props = {
   onHomepage?: boolean;
@@ -119,7 +120,7 @@ const SearchBar: React.FC<Props> = ({ onHomepage, className }) => {
         </div>
 
         {!onHomepage && (
-          <div className="flex flex-shrink flex-row items-center desktop-menu">
+          <div className="flex flex-row-reverse md:flex-row items-center desktop-menu">
             <button
               id="search-bar-menu-button"
               type="button"
@@ -130,6 +131,9 @@ const SearchBar: React.FC<Props> = ({ onHomepage, className }) => {
               <div className="sr-only">Menu</div>
             </button>
 
+            <span className={`text-white mr-2`}>
+              <DarkMode />
+            </span>
             <Link href="/advanced-search/" className={`hidden md:flex ${styles.menuLink}`}>
               <div className={`${styles.advancedSearchIcon} ${styles.linkIcon}`} aria-hidden="true" />
               Advanced

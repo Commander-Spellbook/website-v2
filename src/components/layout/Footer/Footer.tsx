@@ -54,7 +54,7 @@ const Footer: React.FC<Props> = ({ className, noMargin }) => {
           </p>
           <p className="my-4">
             Commander Spellbook utilizes icons provided by&nbsp;
-            <a href="https://fontawesome.com/">Font Awesome</a>&nbsp; according to the&nbsp;
+            <a href="https://fontawesome.com/">Font Awesome</a> according to the&nbsp;
             <a href="https://fontawesome.com/license">Font Awesome License</a>.
           </p>
         </div>
